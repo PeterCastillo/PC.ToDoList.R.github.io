@@ -58,8 +58,12 @@ const Formulario = ({agregarTodo}) => {
 
         setTodo((old) => ({
             ...old,
-            [name]: type === "checkbox" ? checked : value
+            [name]: type === "checkbox" ? checked : value /*Hicimos haci por el checkbox ya que es algo especial, porque es lo mismo que hay debajo*/
         }))
+        // }setTodo({
+        //     ...todo,
+        //     [e.target.name]: e.target.value
+        // })
     }
 
     return (
