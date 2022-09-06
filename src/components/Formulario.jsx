@@ -1,5 +1,6 @@
 import { useState } from "react"
 import Swal from "sweetalert2"
+import "./scss/Formulario.scss"
 
 const Formulario = ({agregarTodo}) => {
     const initialState =  {
@@ -67,41 +68,47 @@ const Formulario = ({agregarTodo}) => {
     }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input 
-                type="text"
-                name="nombre"
-                placeholder="Ingrese nombre de la tarea"
-                value={nombre}
-                onChange={handleChange}
-            />
-            <textarea 
-                name="descripcion"
-                placeholder="Descripcion de la tarea"
-                value={descripcion}
-                onChange={handleChange}
-                >
-            </textarea>
-            <select 
-                name="estado"
-                value={estado}
-                onChange={handleChange}
-                >
-                <option value={false}>Pendiente</option>
-                <option value={true}>Realizada</option>
-            </select>
-            <div>
+        <div className={'container'}>
+            <form onSubmit={handleSubmit} className={'form'}>
                 <input 
-                    id="flexCheckDefault"
-                    type="checkbox"
-                    name="prioridad" 
-                    checked={prioridad}
+                    type="text"
+                    name="nombre"
+                    placeholder="Ingrese nombre de la tarea"
+                    value={nombre}
                     onChange={handleChange}
+                    className={'input'}
                 />
-                <label htmlFor="flexCheckDefault">Default checkbox</label>
-            </div>
-            <button>Agregar</button>
-        </form>
+                <textarea 
+                    name="descripcion"
+                    placeholder="Descripcion de la tarea"
+                    value={descripcion}
+                    onChange={handleChange}
+                    className={'text'}
+                    >
+                </textarea>
+                <select 
+                    name="estado"
+                    value={estado}
+                    onChange={handleChange}
+                    className={'input'}
+                    >
+                    <option value={false}>Pendiente</option>
+                    <option value={true}>Realizada</option>
+                </select>
+                <div>
+                    <input  
+                        id="flexCheckDefault"
+                        type="checkbox"
+                        name="prioridad" 
+                        checked={prioridad}
+                        onChange={handleChange}
+                        className={''}
+                    />
+                    <label htmlFor="flexCheckDefault">Default checkbox</label>
+                </div>
+                <button type="submit">Agregar</button>
+            </form>
+        </div>
     )
 }
 

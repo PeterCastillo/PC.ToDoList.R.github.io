@@ -1,6 +1,6 @@
 import Formulario from "./Formulario"
 import { useState } from "react"
-import Todo from "./ToDo"
+import ToDo from "./ToDo"
 
 const TodoList = () => {
     const[todos, setTodos] = useState([])
@@ -25,7 +25,7 @@ const TodoList = () => {
             <Formulario agregarTodo={agregarTodo}/>
             <ul>
                 {todos.map((item) => (
-                <Todo key={item.id} todo={item} eliminarTodo={eliminarTodo} editarTodo={editarTodo}/>
+                <ToDo key={item.id} todo={item} eliminarTodo={eliminarTodo} editarTodo={editarTodo}/>
                 ))}
             </ul>
         </div>

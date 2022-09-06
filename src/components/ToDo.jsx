@@ -1,4 +1,6 @@
-const Todo = ({todo , eliminarTodo , editarTodo}) => {
+import { Button } from "@mui/material"
+
+const ToDo = ({todo , eliminarTodo , editarTodo}) => {
     const {id,nombre,descripcion,estado,prioridad} = todo
 
     return (
@@ -7,10 +9,10 @@ const Todo = ({todo , eliminarTodo , editarTodo}) => {
             <span>Descripcion: {descripcion}</span>
             <span>Estado: {estado ? 'Finalizado': 'Pendiente'}</span>
             <span>Prioridad: {prioridad ? 'Prioritario' : 'No es prioritario' }</span>
-            <button onClick={()=> eliminarTodo(id) }>Eliminar</button>
-            <button onClick={()=> editarTodo(id) }>Editar</button>
+            <Button onClick={()=> eliminarTodo(id) } variant="outlined" color="primary">Eliminar</Button>
+            <Button onClick={()=> editarTodo(id) } variant="outlined" color="primary">Editar</Button>
         </li>
     )
 }
 
-export default Todo
+export default ToDo
